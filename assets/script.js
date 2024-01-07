@@ -1,7 +1,6 @@
 //basic elements
 var searchBtn = document.getElementById("searchBtn");
 var forecastsEl = document.getElementById("forecasts");
-var input = document.getElementById("input");
 
 var historyArray = loadHistory();
 
@@ -9,24 +8,20 @@ var historyArray = loadHistory();
 function convertSearch() {
   var input = document.getElementById("input").value.trim();
 
-  fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + input + "&limit=1&appid=b539f961ee018c36b88d3838ba7bcfc2")
+  fetch("https://api.tomorrow.io/v4/timelines?location=40.75872069597532,-73.98529171943665&fields=temperature&timesteps=1h&units=metric&apikey=dNgdozM3h4WRdm0leU85mbWpXLOrCYMK" + input + "dNgdozM3h4WRdm0leU85mbWpXLOrCYMK")
   .then((response) => response.json())
-  .then(function (data) {
-      var lon = data[0].lon;
-      var lat = data[0].lat;
-      var city = data[0].name;
-      getWeatherData(lon, lat, city);
+  .then(response => console.log(response))
+  .catch(err => console.error(err));
       saveHistory(city);
       updateHistory();
       document.getElementById("input").value = "";
-  })
-}
+  }
 
 //featch request for api data
 function convertHistorySearch(historyBtnInfo) {
   var input = historyBtnInfo.textContent;
 
-  fetch("https://api.openweathermap.org/geo/1.0/direct?q=" + input + "&limit=1&appid=b539f961ee018c36b88d3838ba7bcfc2")
+  fetch("https://api.tomorrow.io/v4/timelines?location=40.75872069597532,-73.98529171943665&fields=temperature&timesteps=1h&units=metric&apikey=dNgdozM3h4WRdm0leU85mbWpXLOrCYMK" + input + "&limit=1&appid=b539f961ee018c36b88d3838ba7bcfc2")
   .then((response) => response.json())
   .then(function (data) {
       var lon = data[0].lon;
@@ -119,8 +114,7 @@ function updateHistory() {
 
 //event listener for seach button
 searchBtn.addEventListener("click", convertSearch);
-//not sure why my input listener is not defined
-input.addEventListener("click", function (event) {
+input.addEventListener("keypress", function (event) {
     if (event.key === "Enter") {
         document.getElementById("searchBtn").click();
     }
