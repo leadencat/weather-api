@@ -1,18 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Your Weather</title>
     <link rel="stylesheet" href="assets/style.css" />
-  </head>
-  <body>
+</head>
+
+<body>
+    <header>View Your Forecast</header>
+    <main>
+    <div class="card-title">
+        <header>Enter your location</header>
+        <div class="card-body">
+           <input type="text" id="inputLocation" placeholder="Enter your city" />
+           <input
+           type="text"
+           id="inputZipCode"
+           placeholder="Enter zip code" />
+        </div>
+    </div>
+    <section id="weatherForecast" class="card card-weather">
+        <header>Weather Forecast</header>
+    </section>
+</main>
+    <script src="./assets/script.js"></script>
+</body>
+<footer>
+    <p>&copy; 2024 weatherForecast</p>
+  </footer>
 
 
-
-
-
-<script src="./assets/script.js"></script>
-  </body>
-  </html>
+</html>
