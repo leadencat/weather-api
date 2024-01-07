@@ -1,10 +1,12 @@
 ## Description
-
+Basic weather webpage that displays hourly and weekly weather reports.
 
 ## Usage 
-
+If you want to view the weather.
 
 ## Links
+https://leadencat.github.io/weather-api/ 
+https://github.com/leadencat/weather-api 
 
 
 ## License
