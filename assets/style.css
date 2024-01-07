@@ -1,0 +1,46 @@
+header {
+    width: 95.55%;
+    background-color: rgb(100, 131, 124);
+    padding: 25PX;
+    text-align: center;
+    color: aliceblue;
+    font-size: larger;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+.card-title {
+font-size: large;
+background-color: grey;
+padding: 3px;
+color: aliceblue;
+font-family:Arial, Helvetica, sans-serif;
+}
+
+.card-body {
+    margin: 10px;
+    padding: 10px;
+}
+
+.btn:hover {
+    cursor: pointer;
+    background-color: rgb(179, 179, 179);
+    color: aliceblue;
+}
+
+.card-weather {
+  background-color: green;
+  height: 300px;
+  color: aliceblue;
+  font-family:Arial, Helvetica, sans-serif;
+  text-align: center;
+  margin: 2px;
+}
+
+.card-weekly {
+    background-color: rgb(52, 35, 92);
+    height: 300px;
+    color: aliceblue;
+    font-family:Arial, Helvetica, sans-serif;
+    text-align: center;
+    margin: 2px;
+  }

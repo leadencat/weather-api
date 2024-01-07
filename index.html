@@ -13,23 +13,27 @@
     <header>View Your Forecast</header>
     <main>
     <div class="card-title">
-        <header>Enter your location</header>
+        <p>Enter your location</p>
+    </div>
         <div class="card-body">
            <input type="text" id="inputLocation" placeholder="Enter your city" />
            <input
            type="text"
            id="inputZipCode"
            placeholder="Enter zip code" />
-        </div>
+           <button id="search" class="btn">Search</button>
     </div>
     <section id="weatherForecast" class="card card-weather">
-        <header>Weather Forecast</header>
+        <head>Weather Forecast</head>
+    </section>
+    <section id="weeklyForecast" class="card card-weekly">
+        <head>5 Day Forecast</head>
     </section>
 </main>
     <script src="./assets/script.js"></script>
 </body>
 <footer>
-    <p>&copy; 2024 weatherForecast</p>
+    <p>&copy; 2024 Weather Forecast</p>
   </footer>
 
 
