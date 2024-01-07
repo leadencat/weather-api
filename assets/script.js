@@ -8,11 +8,11 @@ var historyArray = loadHistory();
 function convertSearch() {
   var input = document.getElementById("input").value.trim();
 
-  fetch("https://api.tomorrow.io/v4/timelines?location=40.75872069597532,-73.98529171943665&fields=temperature&timesteps=1h&units=metric&apikey=dNgdozM3h4WRdm0leU85mbWpXLOrCYMK" + input + "dNgdozM3h4WRdm0leU85mbWpXLOrCYMK")
+  fetch("https://api.openweathermap.org/data/3.0/onecall?lat={lat}&lon={lon}&appid={API key}" + input + "c710d799234d6641926c70e9634226d2")
   .then((response) => response.json())
   .then(response => console.log(response))
   .catch(err => console.error(err));
-      saveHistory(city);
+      saveHistory(location);
       updateHistory();
       document.getElementById("input").value = "";
   }
@@ -21,7 +21,7 @@ function convertSearch() {
 function convertHistorySearch(historyBtnInfo) {
   var input = historyBtnInfo.textContent;
 
-  fetch("https://api.tomorrow.io/v4/timelines?location=40.75872069597532,-73.98529171943665&fields=temperature&timesteps=1h&units=metric&apikey=dNgdozM3h4WRdm0leU85mbWpXLOrCYMK" + input + "&limit=1&appid=b539f961ee018c36b88d3838ba7bcfc2")
+  fetch("https://api.openweathermap.org/data/3.0/onecall/timemachine?lat={lat}&lon={lon}&dt={time}&appid={API key}" + input + "4a0782587ed2def579b8c3482d75bae2")
   .then((response) => response.json())
   .then(function (data) {
       var lon = data[0].lon;
@@ -32,7 +32,8 @@ function convertHistorySearch(historyBtnInfo) {
 };
 
 function getWeatherData(lon, lat, city) {
-    fetch("https://api.openweathermap.org/data/2.5/onecall?lat=" + lat + "&lon=" + lon + "&exclude=minutely&units=imperial&appid=3235f6ca43f152b21beee3053909231f")
+    fetch("https://api.openweathermap.org/data/3.0/onecall/timemachine?lat={lat}&lon={lon}&dt={time}&appid={API key}"
+    + input + "4a0782587ed2def579b8c3482d75bae2")
         .then((response) => response.json())
         .then(function (data) {
             currentDay(data, city);
